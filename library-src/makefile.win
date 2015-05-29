@@ -35,8 +35,8 @@ OBJS = agenda.obj analysis.obj argacces.obj bload.obj bmathfun.obj bsave.obj \
 .c.obj :
 	cl -c -DWIN_MVC -DALLOW_ENVIRONMENT_GLOBALS=0 /I"$(JAVA_INCLUDE)" /I"$(JAVA_INCLUDE)\win32" $<
 
-CLIPSJNI.dll : $(OBJS)
-	link /libpath:"$(JAVA_LIB)" *.obj /dll /out:CLIPSJNI.dll
+CLIPSJNI2.dll : $(OBJS)
+	link /libpath:"$(JAVA_LIB)" *.obj /dll /out:CLIPSJNI2.dll
 
 net_sf_clipsrules_jni_Environment.obj: net_sf_clipsrules_jni_Environment.c setup.h envrnmnt.h \
   symbol.h usrsetup.h clips.h argacces.h \

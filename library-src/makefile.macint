@@ -35,8 +35,8 @@ OBJS = agenda.o analysis.o argacces.o bload.o bmathfun.o bsave.o \
 	    -Wmissing-prototypes -Wnested-externs \
 	    -Wstrict-prototypes -Waggregate-return -Wno-implicit $<
 
-libCLIPSJNI.jnilib : $(OBJS) CLIPSJNI_Environment.c
-	gcc -arch i386 -dynamiclib -o libCLIPSJNI.jnilib -Wall -I/System/Library/Frameworks/JavaVM.framework/Headers -framework JavaVM -lm $(OBJS) CLIPSJNI_Environment.c
+libCLIPSJNI2.jnilib : $(OBJS) CLIPSJNI_Environment.c
+	gcc -arch i386 -dynamiclib -o libCLIPSJNI2.jnilib -Wall -I/System/Library/Frameworks/JavaVM.framework/Headers -framework JavaVM -lm $(OBJS) CLIPSJNI_Environment.c
 
 agenda.o: agenda.c setup.h envrnmnt.h symbol.h usrsetup.h argacces.h \
   expressn.h exprnops.h exprnpsr.h extnfunc.h userdata.h scanner.h \
