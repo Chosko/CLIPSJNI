@@ -13,3 +13,9 @@ target/
 .classpath
 .project
 .settings/
+
+# Log files
+*.log
+
+# Netbeans files
+nb-configuration.xml
