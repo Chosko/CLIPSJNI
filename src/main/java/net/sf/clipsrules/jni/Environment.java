@@ -20,7 +20,7 @@ public class Environment {
 	public static final String MESSAGE_HANDLERS = "message-handlers";
 
 	static {
-		System.loadLibrary("CLIPSJNI");
+		System.loadLibrary("CLIPSJNI2");
 	}
 
 	private long theEnvironment;

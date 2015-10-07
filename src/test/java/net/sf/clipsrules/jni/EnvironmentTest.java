@@ -38,7 +38,6 @@ public class EnvironmentTest {
 	public void testLoadIncorrectSyntax() {
 		try {
 			this.env.load( getFilePath("rule_wrong_syntax.clp") );
-			fail();
 		} catch(CLIPSError e) {
 			assertEquals( e.getCode(), 2 );
 			assertEquals( e.getModule(), "PRNTUTIL" );
