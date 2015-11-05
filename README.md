@@ -8,8 +8,8 @@ This is a fork of https://github.com/gomezgoiri/CLIPSJNI
 
 This project contains:
 
-* The CLIPSJNI **java library**, useful to create java applications that use CLIPS
-* The CLIPSJNI **native library**, which is required to be installed on your system to make the **CLIPSJNI java library** work.
+* An [improved version](https://github.com/gomezgoiri/CLIPSJNI) of the *CLIPSJNI* **java library**, useful to create java applications that use CLIPS
+* An [improved version](https://github.com/gomezgoiri/CLIPSJNI) of the *CLIPSJNI* **native library**, which is required to be installed on your system to make the **CLIPSJNI java library** work.
 
 > I renamed the **native library** from CLIPSJNI to CLIPSJNI2 to avoid naming conflicts with the original CLIPSJNI, as someone may want to keep both versions for compatibility with other applications.
 
