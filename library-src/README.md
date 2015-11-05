@@ -44,8 +44,6 @@ To create the native library DLL, enter the following command:
 
 Once you have create the native library, copy the CLIPSJNI.dll file from the CLIPSJNI/library-src to the top level CLIPSJNI directory.
 
-'''WARNING: this makefile has not been checked on its latest version (0.4) yet.'''
-
 
 Other systems
 -------------

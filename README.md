@@ -1,34 +1,51 @@
-CLIPSJNI
-========
+# CLIPSJNI
 
-In this project I made the [following improvements](https://sourceforge.net/p/clipsrules/discussion/776945/thread/01312882) to the original [CLIPSJNI](https://sourceforge.net/projects/clipsrules/) project:
+This is a fork of https://github.com/gomezgoiri/CLIPSJNI
 
- * More "standardized" package name: _net.sf.clipsrules_.
- * Throwing exceptions instead of only printing errors on the stdout.
- * Inline documentation for Environment class' methods and value classes. The idea is to make Java developers' life easier.
- * Mavenizing the project (and the original demo applications).
- * Creating an OSGi compliant jar.
- * Changes on Value's classes design.
-  * In the 0.3 version _PrimitiveValue_ defined all the methods inherited by the subclasses. Each of these methods throw a generic _Exception_ and were overriden in each subclass. IMHO, this is an ankward use of the polimosphism. Additionally, it forces each method to throw a generic and hardly understandable _Exception_.
-  * In the 0.4 version I propose, each Subclass defines its owns methods. Furthermore, I've introduced some new classes to have a one-to-one equivalence with CLIPS' datatypes.
+## A quick overview
 
+### What is this?
 
-Requirements
-------------
+This project contains:
 
-CLIPSJNI project has been __mavenized__.
-This means that [Maven](http://maven.apache.org/) must be installed.
+* The CLIPSJNI **java library**, useful to create java applications that use CLIPS
+* The CLIPSJNI **native library**, which is required to be installed on your system to make the **CLIPSJNI java library** work.
 
-CLIPS' __native library__ must be installed in the system too.
-The  _release_ section provides the library for Windows and Linux.
-If you want/need to generate the library from scratch, in the _library-src_ directory you will find a _README_ file which explains how to do it.
+> I renamed the **native library** from CLIPSJNI to CLIPSJNI2 to avoid naming conflicts with the original CLIPSJNI, as someone may want to keep both versions for compatibility with other applications.
 
+### Project directories
 
-Installation
-------------
+* `library-src`: the sources (written in C) of the CLIPSJNI **native library**
+* `compiled-library`: some compiled versions of the CLIPSJNI **native library**
+* `src`: the sources of the CLIPSJNI **java library**
+* `examples`: some examples (you don't say?)
+
+## Configuration
+
+### Install CLIPSJNI native library
+
+Copy CLIPSJNI2 from `compiled-library` (according to your platform), and paste it in a directory of your OS reachable by PATH. 
+
+> CLIPSJNI2 has different names and extensions across different platforms, such as CLIPSJNI2.dll for Windows and libCLIPSJNI2.os for linux
+
+If you can't find your platform in `compiled-library`, you have to compile the CLIPSJNI native library manually (see next section)
+
+#### Compile CLIPSJNI native library (if needed)
+
+If you need to generate the library from scratch, in the `library-src` directory you will find a `README` file which explains how to do it.
+
+> To compile CLIPSJNI2 you must have a jdk installed in your system, with all the environment variables configured correctly.
+
+If you compile CLIPSJNI for a platform which is not present in `compiled-library`, please send me a pull request to include it here, or just let me know opening an issue
+
+### Compile CLIPSJNI java library
 
 To install CLIPSJNI in your Maven local repository, simply run:
 
     mvn install
 
-This will also generate an OSGi compliant jar in the _target_ subfolder that you can use wherever you want.
+This will also generate an OSGi compliant jar in the `target` subfolder that you can use wherever you want.
+
+### Original README
+
+You can find the original README in `README.old.md`
