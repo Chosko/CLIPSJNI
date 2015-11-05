@@ -36,7 +36,7 @@ If you need to generate the library from scratch, in the `library-src` directory
 
 > To compile CLIPSJNI2 you must have a jdk installed in your system, with all the environment variables configured correctly.
 
-If you compile CLIPSJNI for a platform which is not present in `compiled-library`, please send me a pull request to include it here, or just let me know opening an issue
+If you compile CLIPSJNI for a platform which is not present in `compiled-library`, please send me a pull request to include it here, or just let me know [opening an issue](https://github.com/Chosko/CLIPSJNI/issues/new)
 
 ### Compile CLIPSJNI java library
 
@@ -48,4 +48,4 @@ This will also generate an OSGi compliant jar in the `target` subfolder that you
 
 ### Original README
 
-You can find the original README in `README.old.md`
+You can find the original README [here](README.old.md)
