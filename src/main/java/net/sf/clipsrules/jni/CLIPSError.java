@@ -18,6 +18,8 @@ public class CLIPSError extends Exception {
 		this.code = code;
 	}
 	
+        
+        
 	public String toString() {
 		return "[" + this.module + this.code + "] " + getMessage();
 	}
@@ -29,4 +31,6 @@ public class CLIPSError extends Exception {
 	public int getCode() {
 		return code;
 	}
+        
+        
 }

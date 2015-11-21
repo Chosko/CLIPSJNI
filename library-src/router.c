@@ -595,7 +595,7 @@ static int QueryRouter(
    /* If the router is inactive, then it can't respond. */
    /*===================================================*/
 
-   if (currentPtr->active == FALSE)
+   if (currentPtr->active == FALSE) 
      { return(FALSE); }
 
    /*=============================================================*/

@@ -329,6 +329,33 @@ globle void AlreadyParsedErrorMessage(
    EnvPrintRouter(theEnv,WERROR," has already been parsed.\n");
   }
 
+/***************************************************************/
+/* MakeSyntaxErrorMessageForClipsError: String message to throw*/
+/* CLIPSError into SyntaxErrorMessage                          */
+/***************************************************************/
+
+globle char* MakeSyntaxErrorMessageForClipsError(
+    char* header,
+    char* location
+    )
+{
+    char *ErrorMessage;
+    int header_len = strlen(header);
+    ErrorMessage = (char*)calloc(header_len,sizeof(char));
+    strncpy(ErrorMessage, header, header_len);
+
+    if(location!=NULL)
+      {
+        int message_len= header_len + strlen(location)+1;
+        message_len += sizeof(location) +1;
+        ErrorMessage = (char*) realloc(ErrorMessage, message_len);
+        ErrorMessage[header_len]=' ';
+        strncat(ErrorMessage,location,message_len);
+      }
+    return ErrorMessage;
+}
+
+
 /*********************************************************/
 /* SyntaxErrorMessage: Generalized syntax error message. */
 /*********************************************************/
@@ -345,8 +372,16 @@ globle void SyntaxErrorMessage(
      }
 
    EnvPrintRouter(theEnv,WERROR,".\n");
+   
+   char * header = "Syntax Error:  Check appropriate syntax for ";
+   char * error = MakeSyntaxErrorMessageForClipsError(header,location);
+   
+   throwCLIPSError(theEnv,"",errorID,error);
    SetEvaluationError(theEnv,TRUE);
   }
+
+
+
 
 /****************************************************/
 /* LocalVariableErrorMessage: Generic error message */

@@ -68,7 +68,8 @@ struct printUtilityData
    LOCALE char                          *FloatToString(void *,double);
    LOCALE char                          *LongIntegerToString(void *,long long);
    LOCALE char                          *DataObjectToString(void *,DATA_OBJECT *);
-   LOCALE void                           SyntaxErrorMessage(void *,char *);
+   LOCALE char                          *MakeSyntaxErrorMessageForClipsError(const char*,char*);
+   LOCALE void                          SyntaxErrorMessage(void *,char *);
    LOCALE void                           SystemError(void *,char *,int);
    LOCALE void                           PrintErrorID(void *,char *,int,int);
    LOCALE void                           PrintWarningID(void *,char *,int,int);
