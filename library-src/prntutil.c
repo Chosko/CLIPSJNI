@@ -334,9 +334,10 @@ globle void AlreadyParsedErrorMessage(
 /* CLIPSError into SyntaxErrorMessage                          */
 /***************************************************************/
 
-globle char* MakeSyntaxErrorMessageForClipsError(
+globle char* MakeErrorMessageForClipsError(
     char* header,
-    char* location
+    char* location,
+    char* footer
     )
 {
     char *ErrorMessage;
@@ -344,14 +345,22 @@ globle char* MakeSyntaxErrorMessageForClipsError(
     ErrorMessage = (char*)calloc(header_len,sizeof(char));
     strncpy(ErrorMessage, header, header_len);
 
-    if(location!=NULL)
+  	if(location!=NULL)
       {
         int message_len= header_len + strlen(location)+1;
-        message_len += sizeof(location) +1;
         ErrorMessage = (char*) realloc(ErrorMessage, message_len);
         ErrorMessage[header_len]=' ';
         strncat(ErrorMessage,location,message_len);
       }
+
+    if(strcmp(footer,"")!=0)
+	    {
+	    		int footer_start = message_len;
+	    		int message_len= message_len + strlen(footer) +1;
+	    		ErrorMessage = (char*)realloc(ErrorMessage,message_len);
+	    		ErrorMessage[footer_start]=' ';
+	    		strncat(ErrorMessage,footer,message_len);
+  	  }
     return ErrorMessage;
 }
 
@@ -374,9 +383,15 @@ globle void SyntaxErrorMessage(
    EnvPrintRouter(theEnv,WERROR,".\n");
    
    char * header = "Syntax Error:  Check appropriate syntax for ";
-   char * error = MakeSyntaxErrorMessageForClipsError(header,location);
+   char * footer = "";
+   char * error = MakeSyntaxErrorMessageForClipsError(header,location,footer);
    
-   throwCLIPSError(theEnv,"",errorID,error);
+   throwCLIPSError(theEnv,"",2,error);
+   
+   free(header);
+   free(footer);
+   free(error);
+   
    SetEvaluationError(theEnv,TRUE);
   }
 
