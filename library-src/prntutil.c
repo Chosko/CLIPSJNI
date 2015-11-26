@@ -344,10 +344,11 @@ globle char* MakeErrorMessageForClipsError(
     int header_len = strlen(header);
     ErrorMessage = (char*)calloc(header_len,sizeof(char));
     strncpy(ErrorMessage, header, header_len);
+    int message_len=0;
 
   	if(location!=NULL)
       {
-        int message_len= header_len + strlen(location)+1;
+        message_len= header_len + strlen(location)+1;
         ErrorMessage = (char*) realloc(ErrorMessage, message_len);
         ErrorMessage[header_len]=' ';
         strncat(ErrorMessage,location,message_len);
@@ -356,7 +357,7 @@ globle char* MakeErrorMessageForClipsError(
     if(strcmp(footer,"")!=0)
 	    {
 	    		int footer_start = message_len;
-	    		int message_len= message_len + strlen(footer) +1;
+	    		message_len= message_len + strlen(footer) +1;
 	    		ErrorMessage = (char*)realloc(ErrorMessage,message_len);
 	    		ErrorMessage[footer_start]=' ';
 	    		strncat(ErrorMessage,footer,message_len);
