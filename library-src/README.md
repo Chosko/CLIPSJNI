@@ -12,25 +12,21 @@ Mac OS X
 
 Launch the Terminal application (located in the Applications/Utilities directory).
 Set the directory to the CLIPSJNI/lbrary-src directory (using the cd command).
-To create a universal native library that can run on both Intel and Power PC architectures, enter the following command:
-
-    make -f makefile.macunv
-
-You can ignore the following warnings generated when the CLIPSJNI_Environment.c file is compiled:
-
-    CLIPSJNI_Environment.c:###: warning: cast to pointer from integer of different size
 
 To create a native library that runs only on the Intel architecture, enter the following command:
 
-    make -f makefile.macint
+    make -f makefile.macint_x86 
+ 
+ for 32bit (i386) machine or
+
+	make -f makefile.macint_x86_64
 
 To create a native library that runs only on the Power PC architecture, enter the following command:
 
     make -f makefile.macppc
 
-Once you have create the native library, copy the libCLIPSJNI.jnilib file from the CLIPSJNI/library-src to the top level CLIPSJNI directory.
+Once you have create the native library, copy the libCLIPSJNI2.jnilib file from the CLIPSJNI/library-src to the /Library/Java/Extensions directory.
 
-'''WARNING: this makefile has not been updated since 0.3 version.'''
 
 Windows 7
 ---------
