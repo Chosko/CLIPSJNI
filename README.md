@@ -1,4 +1,4 @@
-# CLIPSJNI
+# CLIPSJNI2
 
 This is a fork of https://github.com/gomezgoiri/CLIPSJNI
 
@@ -24,23 +24,23 @@ This project contains:
 
 ### Install CLIPSJNI native library
 
-Copy CLIPSJNI2 from `compiled-library` (according to your platform), and paste it in a directory of your OS reachable by PATH. 
+Copy CLIPSJNI2 from `compiled-library` (according to your platform), and paste it in a directory of your OS reachable by PATH.
 
 > CLIPSJNI2 has different names and extensions across different platforms, such as CLIPSJNI2.dll for Windows and libCLIPSJNI2.os for linux
 
 If you can't find your platform in `compiled-library`, you have to compile the CLIPSJNI native library manually (see next section)
 
-#### Compile CLIPSJNI native library (if needed)
+#### Compile CLIPSJNI2 native library (if needed)
 
 If you need to generate the library from scratch, in the `library-src` directory you will find a `README` file which explains how to do it.
 
 > To compile CLIPSJNI2 you must have a jdk installed in your system, with all the environment variables configured correctly.
 
-If you compile CLIPSJNI for a platform which is not present in `compiled-library`, please send me a pull request to include it here, or just let me know [opening an issue](https://github.com/Chosko/CLIPSJNI/issues/new)
+If you compile CLIPSJNI2 for a platform which is not present in `compiled-library`, please send me a pull request to include it here, or just let me know [opening an issue](https://github.com/Chosko/CLIPSJNI/issues/new)
 
-### Compile CLIPSJNI java library
+### Compile CLIPSJNI2 java library
 
-To install CLIPSJNI in your Maven local repository, simply run:
+To install CLIPSJNI2 in your Maven local repository, simply run:
 
     mvn install
 

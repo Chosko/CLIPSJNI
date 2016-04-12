@@ -1,7 +1,7 @@
-CLIPSJNI demos
+CLIPSJNI2 demos
 ==============
 
-This directory contains four different CLIPSJNI usage examples/demos:
+This directory contains four different CLIPSJNI2 usage examples/demos:
 
  * AnimalDemo
  * AutoDemo
